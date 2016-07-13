@@ -4,7 +4,13 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1')
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='/javascripts/jquery-3.0.0.min.js')
-    script(src='/bootstrap/js/bootstrap.min.js')
   body
+    block header
+      .pageheader
     block content
+    block footer
+      footer
+          p
+            | Copyright &copy; 2016 | Terms and Conditions
+    script(src='/javascripts/jquery-3.0.0.min.js')
+    script(src="https://code.jquery.com/jquery-2.2.4.min.js")
