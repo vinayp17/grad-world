@@ -2,8 +2,14 @@ extends layout
 
 block header
     .pageheader
-        h1 Welcome to MyGradWorld
+        .container
+            #heading
+                h1 Welcome to MyGradWorld
+            #login-form
+                input(type="text", id="login-email", placeholder="Email", autofocus="autofocus")
+                input(type="password" id="login-password" placeholder="Password")
+                input(type="submit" name="submit" value="Sign In")
 block content
     .main
         .background
-          h1 Build your future with us
+            h1 Build your future with us

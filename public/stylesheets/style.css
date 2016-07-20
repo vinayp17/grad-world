@@ -8,19 +8,25 @@ html, body {
 .pageheader {
     width: 100%;
     height: 8%;
-    background-color: #eea236;
+    background-color: #66afe9;
 }
 
-.pageheader h1 {
+.pageheader .container #heading h1 {
     padding-top:1%;
     padding-left:1%;
     margin:0;
+    float: left;
+    white-space: nowrap;
+}
+
+.pageheader .container #login-form {
+    margin-top: 1%;
+    float: right;
 }
 
 .main {
     height: 82%;
 }
-
 
 .main .background {
     height: 100%;
@@ -30,17 +36,18 @@ html, body {
 }
 
 .main .background h1 {
-    margin: 0;
-    padding-left: 30%;
+    margin-top: 0;
+    padding-top: 5%;
+    padding-left: 10%;
     font-family: "New Peninim MT";
-    font-size: 400%;
     color: darkblue;
+    white-space: nowrap;
 }
 
 
 footer {
     height: 10%;
-    background-color: #eea236;
+    background-color: #66afe9;
 }
 
 footer p {
