@@ -1,0 +1,56 @@
+
+extends layout
+
+block header
+    .pageheader
+        .container
+            #heading
+                h1 MyGradWorld
+
+block content
+  h1= title
+  P
+   | Welcome to XYZ, *insert a tagline*
+   br 
+   | Create your account and start earning in minutes.
+   | 
+  #signup-form
+
+block sidebar
+   .widget
+     h1 Account
+     p *EMAIL
+       br
+       input(type ="text", id = "loginEmailIdentifier", placeholder = "name@example.com", autofocus = "autofocus")
+       br
+     p *PASSWORD
+       br
+       input(type = "password" id = "loginPassword" placeholder = "Atleast 6 characters")
+       
+     h1 Profile
+     p *NAME 
+       br
+       input(type = "text", name = "firstName" placeholder = "First Name")
+       input(type = "text", name = "lastName" placeholder = "Last Name")
+       br
+       input(type = "text", name = "preferredName" placeholder = "Preferred Name")
+       br
+     p *EDUCATION
+       br
+       select(name="educationLevel")
+        option(value = "BS", selected = BS) BS
+        option(value = "MS", selected = MS) MS
+        option(value = "PhD", selected = PhD) PhD
+       
+       input(type = "text", name = "university" placeholder = "University")
+       button(onclick="move();return false;") +
+       br
+     p *PROFESSIONAL
+       br
+       input(type = "text", name = "employment" placeholder = "Current Employer")
+       input(type = "text", name = "employmentPosition" placeholder = "Position")
+       button(onclick="move();return false;") +
+       br
+     p 
+       input(type="submit" name="createAccount" value="CREATE ACCOUNT")
+       br

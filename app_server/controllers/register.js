@@ -8,9 +8,9 @@ module.exports.registerstudent = function(req, res) {
     res.render('index', { title: 'RegisterStudent'});
 };
 
-/* Get Register-counsellor page */
+/* Get SignUp as a Counsellor page */
 module.exports.registercounsellor = function(req, res) {
-    res.render('index', { title: 'RegisterCounsellor'});
+    res.render('signUpCounseller', { title: 'SIGN UP AS A COUNSELLOR'});
 };
 
 
