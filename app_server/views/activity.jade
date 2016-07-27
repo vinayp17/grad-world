@@ -1,0 +1,25 @@
+extends layout
+
+block header
+    .pageheader
+        .container
+            #heading
+                h1 MyGradWorld
+
+block content
+    .main-activity
+        .container
+            p What do you want to study
+            select
+                each item,i in program
+                    option(value=i) #{item}
+            p Where do you want to study
+            select
+                each item,i in location
+                    option(value=i) #{item}
+            p Add a school to your Dashboard
+            select
+                each item,i in schools
+                    option(value=i) #{item}
+            button(class="btn").
+                Complete-Setup

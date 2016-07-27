@@ -24,7 +24,7 @@ html, body {
     float: right;
 }
 
-.main {
+.main, .main-activity {
     height: 82%;
 }
 
@@ -46,7 +46,7 @@ html, body {
 
 .sidebar {
     float: center;
-    width: 500px;
+    width: 30%;
 }
 
 .sidebar .widget {
