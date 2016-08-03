@@ -36,3 +36,5 @@ process.on('SIGINT', function(){
       process.exit(0);
    });
 });
+
+require('../models/users');
