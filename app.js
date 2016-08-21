@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
+var session = require('client-sessions');
 
 require('./app_api/models/db');
 require('./app_api/config/passport');
@@ -16,10 +17,32 @@ var routesApi = require('./app_api/routes/index');
 var users = require('./app_api/models/users');
 
 
-
-
-
 var app = express();
+
+//error handlers
+app.use(function(err, req, res, next){
+    if(err.name == "UnauthorizedError") {
+        res.status(401);
+        res.json({"message" : err.name + ": " + err.message});
+    }
+    next();
+});
+
+app.use(session(
+    {
+        cookieName: 'session',
+        secret: process.env.SESSION_SECRET,
+        duration: 30 * 60 * 1000,
+        activeDuration: 5 * 60 * 1000,
+    }
+));
+
+// Catch unauthorized errors
+app.use(function(req, res, next) {
+    if (!req.session.token)
+        res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+    next();
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
@@ -68,6 +91,10 @@ app.use(function(err, req, res, next) {
     message: err.message,
     error: {}
   });
+});
+
+var server = app.listen(3000, function() {
+    console.log("Server listening at http://"+ server.address() + ':' + server.address().port);
 });
 
 
