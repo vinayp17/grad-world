@@ -24,15 +24,15 @@ html, body {
     float: right;
 }
 
-.main, .main-activity {
+.main, .main-activity, .main-reg-counsellor {
     height: 82%;
 }
 
 .main .background {
     height: 100%;
-    background-image: url(../images/grad-home.jpg);
+    background: url(../images/grad-home.jpg);
     background-size: cover;
-    opacity: 0.7;
+    opacity: 1;
 }
 
 .main .background h1 {
@@ -41,39 +41,27 @@ html, body {
     padding-left: 10%;
     font-family: "New Peninim MT";
     color: darkblue;
-    white-space: nowrap;
 }
 
-.sidebar {
-    float: center;
-    width: 30%;
+.register-counsellor {
+    padding-left: 15%;
 }
 
-.sidebar .widget {
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    border: 2px solid #ccc;
-    margin-left: 100px;
-    background-color: #FFE4E1;
-    -webkit-box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,0.8), 0px 3px 0px -2px rgba(0,0,0,0.1);
-    box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,0.8), 0px 3px 0px -2px rgba(0,0,0,0.1);
+.register-counsellor h2 {
+    color: blueviolet;
+    display: inline;
 }
 
-.sidebar .widget h1 {
-    font-family: 'Quicksand';
-    margin: 13px 10px 4px;
-    padding-bottom: 10px;
-    border-bottom: 1px dotted #ddd;
-    -webkit-border-radius: 2px 2px 0px 0px;
-    border-radius: 2px 2px 0px 0px;
-    margin-bottom: 10px;
+.home-reg-form {
+    background-color: #eee ;
+    opacity:1;
+    margin-left:10%;
+};
+
+.select-row {
+    margin-bottom: 12px;
 }
 
-.sidebar .widget p {
-    font-size: 13px;
-    padding: 0px 10px;
-    margin-bottom: 10px;
-}
 
 footer {
     height: 10%;

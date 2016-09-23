@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var session = require('client-sessions');
+var jwt = require('express-jwt');
 
 require('./app_api/models/db');
 require('./app_api/config/passport');
@@ -20,13 +21,19 @@ var users = require('./app_api/models/users');
 var app = express();
 
 //error handlers
-app.use(function(err, req, res, next){
+/*app.use(function(err, req, res, next){
     if(err.name == "UnauthorizedError") {
         res.status(401);
         res.json({"message" : err.name + ": " + err.message});
     }
     next();
+});*/
+
+/*app.get('/api/school', jwt({secret: process.env.JWT_SECRET}), function(req,res) {
+    if (!req.session.token) return res.sendStatus(401);
+    next();
 });
+*/
 
 app.use(session(
     {

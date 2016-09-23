@@ -8,49 +8,31 @@ block header
                 h1 MyGradWorld
 
 block content
-  h1= title
-  P
-   | Welcome to XYZ, *insert a tagline*
-   br 
-   | Create your account and start earning in minutes.
-   | 
-  #signup-form
-
-block sidebar
-   .widget
-     h1 Account
-     p *EMAIL
-       br
-       input(type ="text", id = "loginEmailIdentifier", placeholder = "name@example.com", autofocus = "autofocus")
-       br
-     p *PASSWORD
-       br
-       input(type = "password" id = "loginPassword" placeholder = "Atleast 6 characters")
-       
-     h1 Profile
-     p *NAME 
-       br
-       input(type = "text", name = "firstName" placeholder = "First Name")
-       input(type = "text", name = "lastName" placeholder = "Last Name")
-       br
-       input(type = "text", name = "preferredName" placeholder = "Preferred Name")
-       br
-     p *EDUCATION
-       br
-       select(name="educationLevel")
-        option(value = "BS", selected = BS) BS
-        option(value = "MS", selected = MS) MS
-        option(value = "PhD", selected = PhD) PhD
-       
-       input(type = "text", name = "university" placeholder = "University")
-       button(onclick="move();return false;") +
-       br
-     p *PROFESSIONAL
-       br
-       input(type = "text", name = "employment" placeholder = "Current Employer")
-       input(type = "text", name = "employmentPosition" placeholder = "Position")
-       button(onclick="move();return false;") +
-       br
-     p 
-       input(type="submit" name="createAccount" value="CREATE ACCOUNT")
-       br
+    .main-reg-counsellor
+        .row
+            .col-lg-8
+                h1 Sign up as Counsellor
+        .row
+            .home-reg-form(class="col-lg-4")
+                p
+                form(action='/register', method="post")
+                    .one-half(class="form-group col-lg-6")
+                        input.form-control(type="text", id="first-name", placeholder="Fist Name", aria-required="true", autofocus="autofocus", name="firstname")
+                    .one-half(class="form-group col-lg-6")
+                        input.form-control(type="text", id="last-name", placeholder="Last Name", autofocus="autofocus", name="lastname")
+                    .one-full(class="form-group col-lg-12")
+                        input.form-control(type="text", id="email", placeholder="Email", autofocus="autofocus", name="email")
+                    .one-full(class="form-group col-lg-12")
+                        input.form-control(type="password", id="password", placeholder="Password", autofocus="autofocus", name="password")
+                    .education-degree(class="form-group col-lg-12")
+                        select.form-control(class="select-row col-lg-6")
+                            each item,i in degreelevel
+                                option(value=i) #{item}
+                    .education-school(class="form-group col-lg-12")
+                        input.form-control(type="text",class="form-group col-lg-12", id="university", placeholder="University", autofocus="autofocus", name="university")
+                    .employer(class="form-group col-lg-6")
+                        input.form-control(type="text",class="form-group col-lg-12", id="employer", placeholder="Company", autofocus="autofocus", name="company")
+                    .employer(class="form-group col-lg-6")
+                        input.form-control(type="text", class="form-group col-lg-12", id="position", placeholder="Occupation", autofocus="autofocus", name="occupation")
+                    .home-signup(class="form-group col-lg-12")
+                        input.form-control(class="btn btn-primary", type="submit", value="SIGN UP")

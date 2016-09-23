@@ -10,7 +10,7 @@ module.exports.registerstudent = function(req, res) {
 
 /* Get SignUp as a Counsellor page */
 module.exports.registercounsellor = function(req, res) {
-    res.render('signUpCounseller', { title: 'SIGN UP AS A COUNSELLOR'});
+    res.render('signUpCounseller', { title: 'SIGN UP AS A COUNSELLOR', degreelevel:['BS', 'MS', 'PhD']});
 };
 
 

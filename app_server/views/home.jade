@@ -3,14 +3,46 @@ extends layout
 block header
     .pageheader
         .container
-            #heading
-                h1 MyGradWorld
-            #login-form
-                form(action="/", method="post")
-                    input(type="text", id="login-email", placeholder="Email", autofocus="autofocus", name="email")
-                    input(type="password" id="login-password" placeholder="Password", name="password")
-                    input(type="submit" name="submit" value="Sign In")
+            .row
+                #heading
+                    .col-lg-2
+                        h1 MyGradWorld
+                #login-form
+                    form(action="/", method="post", ng-controller="homelogin")
+                        input(type="text", id="login-email", placeholder="Email", autofocus="autofocus", name="email")
+                        input(type="password" id="login-password" placeholder="Password", name="password")
+                        input(type="submit" name="submit" value="Sign In")
 block content
     .main
         .background
-            h1 Build your future with us
+            .row
+                h1 Build your future with us
+            .row
+                .home-reg-form(class="col-lg-4")
+                    p
+                    form(action='/register', method="post")
+                            .one-half(class="form-group col-lg-6")
+                                input.form-control(type="text", id="first-name", placeholder="Fist Name", aria-required="true", autofocus="autofocus", name="firstname")
+                            .one-half(class="form-group col-lg-6")
+                                input.form-control(type="text", id="last-name", placeholder="Last Name", autofocus="autofocus", name="lastname")
+                            .one-full(class="form-group col-lg-12")
+                                input.form-control(type="text", id="email", placeholder="Email", autofocus="autofocus", name="email")
+                            .one-full(class="form-group col-lg-12")
+                                input.form-control(type="password", id="password", placeholder="Password", autofocus="autofocus", name="password")
+                            .home-signup(class="form-group col-lg-12")
+                                input.form-control(class="btn btn-primary", type="submit", value="SIGN UP")
+            .row
+                .register-counsellor
+                    h2
+                        span.
+                            Teach with MyGradWorld
+                    button(class="btn btn-primary", onclick="getRegisterCounsellor()") Sign Up as Counsellor
+    script.
+        function getRegisterCounsellor() {
+            window.location.href = '/register/counsellor'
+        }
+
+
+
+
+

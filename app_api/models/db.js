@@ -3,8 +3,8 @@ var mongoose = require( 'mongoose');
 var dbURI = 'mongodb://localhost/grad-world';
 if (process.env.NODE_ENV == 'production') {
     dbURI = process.env.MONGOLAB_URI;
-
 }
+mongoose.Promise = global.Promise;
 mongoose.connect(dbURI);
 
 /*Connection monitoring functions*/
@@ -38,3 +38,4 @@ process.on('SIGINT', function(){
 });
 
 require('../models/users');
+require('../models/schooldb');

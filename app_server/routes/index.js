@@ -11,6 +11,7 @@ var ctrlLogout = require('../controllers/logout');
 /* Home Page */
 router.get('/', ctrlHome.homepage);
 router.post('/', ctrlHome.homelogin);
+router.post('/register', ctrlHome.register);
 
 /* Register Pages */
 router.get('/register', ctrlRegister.registerhome);

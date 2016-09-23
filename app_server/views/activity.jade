@@ -9,19 +9,29 @@ block header
 block content
     .main-activity
         .container
-            p What do you want to study
-            select
-                each item,i in program
-                    option(value=i) #{item}
-            p Where do you want to study
-            select
-                each item,i in location
-                    option(value=i) #{item}
-            p Add a school to your Dashboard
-            select
-                each item,i in schools
-                    option(value=i) #{item}
-            button(class="btn").
-                Complete-Setup
-            a(href='/logout', class="btn btn-default btn-sm").
-                Logout
+            .welcome-user
+                h1 Welcome  #{username}
+            .setup-form(class="col-sm-12  col-md-3 col-lg-3")
+                .program
+                    .program-label
+                        p What do you want to study
+                    .program-select(class="select-row")
+                        select.form-control(aria-label="Program")
+                            each item,i in program
+                                option(value=i) #{item}
+                .location
+                    .location-label
+                        p Where do you want to study
+                     .location-select
+                        select.form-control(class="select-row")
+                            each item,i in location
+                                option(value=i) #{item}
+                .school
+                    .school-label
+                        p Add a school to your Dashboard
+                    .school-select
+                        select.form-control(class="select-row")
+                            each item,i in schools
+                                option(value=i) #{item}
+                button(class="btn btn-primary") Complete-Setup
+                a(href='/logout', class="btn btn-default btn-sm") Logout

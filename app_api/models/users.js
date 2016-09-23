@@ -16,17 +16,19 @@ var userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    nickname: String,
     education: {
         type: String,
-        required: true
     },
     university: {
         type: String,
-        required: true
     },
     employer: String,
     jobtitle: String,
+    studentprogram: String,
+    schoollist: [{
+        school: String,
+    }],
+    isCounsellor: Boolean,
     hash: String,
     salt: String,
 });
