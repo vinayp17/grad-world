@@ -11,6 +11,11 @@ module.exports.homepage = function(req, res) {
     }
 };
 
+
+module.exports.demo = function(req, res) {
+    res.render('demo')
+}
+
 /* Handle post request for login */
 module.exports.homelogin = function(req, res, $window) {
     var requestOptions, path;

@@ -24,5 +24,8 @@ router.get('/activity', ctrlActivity.userAuthenticated, ctrlActivity.activityhom
 /* Logout */
 router.get('/logout', ctrlLogout.logout);
 
+/* Demo - to understand layout */
+router.get('/demo', ctrlHome.demo);
+
 
 module.exports = router;

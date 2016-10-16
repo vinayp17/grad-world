@@ -24,7 +24,7 @@ html, body {
     float: right;
 }
 
-.main, .main-activity, .main-reg-counsellor {
+.main, .main-activity, .main-reg-counsellor, .demo-container {
     height: 82%;
 }
 
@@ -72,4 +72,8 @@ footer p {
     margin: 0;
     padding: 10px;
     color: antiquewhite;
+}
+
+.div2 h1{
+    display: inline;
 }

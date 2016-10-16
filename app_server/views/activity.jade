@@ -9,29 +9,34 @@ block header
 block content
     .main-activity
         .container
-            .welcome-user
-                h1 Welcome  #{username}
-            .setup-form(class="col-sm-12  col-md-3 col-lg-3")
-                .program
-                    .program-label
-                        p What do you want to study
-                    .program-select(class="select-row")
-                        select.form-control(aria-label="Program")
-                            each item,i in program
-                                option(value=i) #{item}
-                .location
-                    .location-label
-                        p Where do you want to study
-                     .location-select
-                        select.form-control(class="select-row")
-                            each item,i in location
-                                option(value=i) #{item}
-                .school
-                    .school-label
-                        p Add a school to your Dashboard
-                    .school-select
-                        select.form-control(class="select-row")
-                            each item,i in schools
-                                option(value=i) #{item}
-                button(class="btn btn-primary") Complete-Setup
-                a(href='/logout', class="btn btn-default btn-sm") Logout
+            .row
+                .col-lg-6
+                    .welcome-user
+                        h1 Welcome  #{username}
+                    .setup-form
+                        .program
+                            .program-label
+                                p What do you want to study
+                            .program-select(class="select-row")
+                                select.form-control(aria-label="Program")
+                                    each item,i in program
+                                        option(value=i) #{item}
+                        .location
+                            .location-label
+                                p Where do you want to study
+                            .location-select
+                                select.form-control(class="select-row")
+                                    each item,i in location
+                                        option(value=i) #{item}
+                        .school
+                            .school-label
+                                p Add a school to your Dashboard
+                            .school-name(ng-controller="TypeaheadCtrl")
+                                input.form-control(type="text", placeholder="Enter your favorite school", ng-model="selected", uib-typeahead="state for state in states | filter:$viewValue | limitTo:8")
+                                button(class="btn btn-primary") Add
+                        button(class="btn btn-primary") Complete-Setup
+                        a(href='/logout', class="btn btn-default btn-sm") Logout
+                .col-lg-6
+                    .dashboard
+                        h1 #{username}'s Dashboard
+
